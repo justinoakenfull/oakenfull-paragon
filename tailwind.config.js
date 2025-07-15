@@ -4,32 +4,67 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html",
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'davy-gray': '#50514F',      // Neutral dark base
-        'maize': '#FFED65',          // High-impact highlight
-        'aero': '#41BBD9',           // Primary neon accent (cyan)
-        'slate-blue': '#7D53DE',     // Secondary neon accent (purple)
-        'ghost-white': '#FAFAFF',    // Light text / glass panels
-      },
-      boxShadow: {
-        'glow-aero': '0 0 8px rgba(65,187,217,0.6), 0 0 16px rgba(65,187,217,0.4)',
-        'glow-slate-blue': '0 0 8px rgba(125,83,222,0.6), 0 0 16px rgba(125,83,222,0.4)',
-        'glow-maize': '0 0 8px rgba(255,237,101,0.6), 0 0 16px rgba(255,237,101,0.4)',
-        'glow-maize-subtle': '0 0 4px rgba(255,237,101,0.6), 0 0 8px rgba(255,237,101,0.4)',
-        'glass-light': '0 2px 10px rgba(255,255,255,0.1)',
-      },
-      outline: {
-        'aero': ['2px solid #41BBD9', '2px'],
-        'slate-blue': ['2px solid #7D53DE', '2px'],
-        'maize': ['2px solid #FFED65', '2px'],
-      },
-      backgroundColor: {
+        'davy-gray': {
+          DEFAULT: '#50514F',
+          subtle: '#3F3F3E',  // ~10% darker
+          highlight: '#666765',  // ~10% lighter
+        },
+        maize: {
+          DEFAULT: '#FFED65',
+          subtle: '#E6D23E',
+          highlight: '#FFF289',
+        },
+        aero: {
+          DEFAULT: '#41BBD9',
+          subtle: '#359FB7',
+          highlight: '#6CD5EA',
+        },
+        'slate-blue': {
+          DEFAULT: '#7D53DE',
+          subtle: '#693BC2',
+          highlight: '#9678E4',
+        },
+        'ghost-white': {
+          DEFAULT: '#FAFAFF',
+          subtle: '#E6E6F2',
+          highlight: '#FFFFFF',
+        },
         'glass-light': 'rgba(255,255,255,0.1)',
         'glass-dark': 'rgba(0,0,0,0.3)',
-        'dark': '#010308'
+      },
+      boxShadow: {
+        // default neon glows
+        'glow-maize': '0 0 8px #FFED65aa, 0 0 16px #FFED6555',
+        'glow-aero': '0 0 8px #41BBD9aa, 0 0 16px #41BBD955',
+        'glow-slate-blue': '0 0 8px #7D53DEaa, 0 0 16px #7D53DE55',
+        // subtle glows (smaller blur + darker shade)
+        'glow-maize-subtle': '0 0 4px #E6D23Eaa, 0 0 8px #E6D23E55',
+        'glow-aero-subtle': '0 0 4px #359FB7aa, 0 0 8px #359FB755',
+        'glow-slate-blue-subtle': '0 0 4px #693BC2aa, 0 0 8px #693BC255',
+        // highlight glows (larger blur + lighter shade)
+        'glow-maize-highlight': '0 0 12px #FFF289aa, 0 0 24px #FFF28955',
+        'glow-aero-highlight': '0 0 12px #6CD5EAaa, 0 0 24px #6CD5EA55',
+        'glow-slate-blue-highlight': '0 0 12px #9678E4aa, 0 0 24px #9678E455',
+        // glass shadows
+        'glow-glass-light': '0 0 8px rgba(255,255,255,0.1) 0 0 16px rgba(255,255,255,0.1)',
+        'glow-glass-dark': '0 0 8px rgba(0,0,0,0.3) 0 0 16px rgba(0,0,0,0.3)',
+      },
+      outline: {
+        // default outline styles
+        'davy-gray': ['2px solid #50514F', '2px'],
+        'maize': ['2px solid #FFED65', '2px'],
+        'aero': ['2px solid #41BBD9', '2px'],
+        'slate-blue': ['2px solid #7D53DE', '2px'],
+        'ghost-white': ['2px solid #FAFAFF', '2px'],
+      },
+      backgroundColor: {
+        // glass layers and dark fallback
+        'glass-light': 'rgba(255,255,255,0.1)',
+        'glass-dark': 'rgba(0,0,0,0.3)',
+        'dark': '#010308',
       },
       backdropBlur: {
         xs: '2px',
@@ -38,6 +73,31 @@ module.exports = {
       },
     },
   },
-  plugins: [],
-};
+  plugins: [
+    function ({ addUtilities, theme }) {
+      const colors = theme('colors')
+      const shadows = theme('boxShadow')
 
+      // 1) Outline utilities
+      const outlineUtils = {}
+      for (const name of ['davy-gray', 'maize', 'aero', 'slate-blue', 'ghost-white']) {
+        outlineUtils[`.outline-${name}-subtle`] = { outline: `2px solid ${colors[name].subtle}` }
+        outlineUtils[`.outline-${name}-highlight`] = { outline: `2px solid ${colors[name].highlight}` }
+      }
+      addUtilities(outlineUtils)
+
+      // 2) Inset-glow utilities for every glow-* shadow
+      const insetUtils = {}
+      Object.entries(shadows).forEach(([key, val]) => {
+        if (key.startsWith('glow-')) {
+          const insetValue = val
+            .split(',')
+            .map(layer => `inset ${layer.trim()}`)
+            .join(', ')
+          insetUtils[`.shadow-${key}-inset`] = { 'box-shadow': insetValue }
+        }
+      })
+      addUtilities(insetUtils, { variants: ['responsive', 'hover', 'focus'] })
+    }
+  ],
+}

@@ -1,0 +1,7 @@
+.hero {
+    @apply flex flex-col grow items-start mt-40 ms-40 gap-4;
+}
+
+.hero-text {
+    @apply text-5xl text-ghost-white;
+}
