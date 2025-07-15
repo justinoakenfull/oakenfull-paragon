@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded-lg transition duration-200 font-medium backdrop-blur-lg bg-glass-bg;
+    }
+
+    .btn-primary {
+        @apply bg-red-600 text-white hover:bg-cyan-700 shadow-md;
+    }
+
+    .btn-glass {
+        @apply border text-cyan-300 backdrop-blur-md hover:bg-cyan-800/30;
+    }
+
+}
+
+body {
+    background-color: #5a174c;
+}
