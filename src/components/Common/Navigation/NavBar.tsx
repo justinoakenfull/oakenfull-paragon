@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavButton } from "./NavButton";
 import '../../../styles/nav/nav.css'; // Assuming you have a CSS file for styling
 
-const navBarItems = ["Home", "Projects", "About", "Contact"] as const;
+const navBarItems = ["Home", "Projects", "About", "Skills", "Contact"] as const;
 type NavItem = typeof navBarItems[number];
 
 type NavBarProps = {
@@ -20,7 +20,7 @@ export function NavBar({ activeItem, onChange }: NavBarProps) {
                         key={item}
                         label={item}
                         isActive={activeItem === item}
-                        onClick={() => onChange(item as NavItem)}
+                        onClick={() => onChange(item)}
                     />
                 ))}
             </ul>

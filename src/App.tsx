@@ -10,8 +10,9 @@ import { Hero } from './components/Hero/Hero';
 import { Projects } from './components/Projects/Projects';
 import { About } from './components/About/About';
 import { Contact } from './components/Contact/Contact';
+import { Skills } from './components/Skills/Skills';
 
-type Page = "Home" | "Projects" | "About" | "Contact";
+type Page = "Home" | "Projects" | "About" | "Contact" | "Skills";
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
         return <About />;
       case 'Contact':
         return <Contact />;
+      case 'Skills':
+        return <Skills />;
       default:
         return <Hero />;
     }

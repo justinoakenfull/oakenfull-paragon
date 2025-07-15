@@ -15,7 +15,7 @@
         @apply border text-cyan-300 backdrop-blur-md hover:bg-cyan-800/30;
     }
 
-    div {
-        @apply text-ghost-white;
+    .content-container {
+        @apply flex flex-col items-center justify-start min-h-screen text-ghost-white m-5;
     }
 }
