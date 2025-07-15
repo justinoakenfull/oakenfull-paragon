@@ -1,19 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 //BG
 import bgImage from './assets/textures/bg-dark-scale.png';
 import { NavBar } from './components/Common/Navigation/NavBar';
 
+// Pages
+import { Hero } from './components/Hero/Hero';
+import { Projects } from './components/Projects/Projects';
+import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
+
+type Page = "Home" | "Projects" | "About" | "Contact";
+
 function App() {
+
+  const [activePage, setActivePage] = React.useState<Page>('Home');
+  const renderPage = () => {
+    switch (activePage) {
+      case 'Home':
+        return <Hero />;
+      case 'Projects':
+        return <Projects />;
+      case 'About':
+        return <About />;
+      case 'Contact':
+        return <Contact />;
+      default:
+        return <Hero />;
+    }
+  };
+
   return (
-    <div className="w-full h-full bg-paragon-grid bg-cover bg-center min-h-screen"
+    <div className='bg-paragon-grid bg-cover bg-center min-h-screen'
       style={{ backgroundImage: `url(${bgImage})` }}>
-
-      <NavBar />
-
+      <div className="w-full h-full">
+        <NavBar activeItem={activePage} onChange={setActivePage} />
+      </div>
+      <div className="content-container">
+        <div className="content">
+          {renderPage()}
+        </div>
+      </div>
     </div>
+
   );
 }
 

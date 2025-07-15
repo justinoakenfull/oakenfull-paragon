@@ -15,8 +15,7 @@
         @apply border text-cyan-300 backdrop-blur-md hover:bg-cyan-800/30;
     }
 
-}
-
-body {
-    background-color: #5a174c;
+    div {
+        @apply text-ghost-white;
+    }
 }

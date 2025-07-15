@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { NavButton } from "./NavButton";
 import '../../../styles/nav/nav.css'; // Assuming you have a CSS file for styling
 
-const navBarItems = ["Home", "Projects", "About", "Contact"];
+const navBarItems = ["Home", "Projects", "About", "Contact"] as const;
+type NavItem = typeof navBarItems[number];
 
-export function NavBar() {
-    const [activeItem, setActiveItem] = useState(navBarItems[0]);
+type NavBarProps = {
+    activeItem: NavItem;
+    onChange: (item: NavItem) => void;
+};
+
+export function NavBar({ activeItem, onChange }: NavBarProps) {
 
     return (
         <nav className="navbar">
@@ -15,7 +20,7 @@ export function NavBar() {
                         key={item}
                         label={item}
                         isActive={activeItem === item}
-                        onClick={() => setActiveItem(item)}
+                        onClick={() => onChange(item as NavItem)}
                     />
                 ))}
             </ul>
