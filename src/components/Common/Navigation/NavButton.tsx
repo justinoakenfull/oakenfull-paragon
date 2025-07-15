@@ -9,7 +9,7 @@ type NavButtonProps = {
 function NavButton({ label, isActive, onClick }: NavButtonProps) {
     return (
         <button className={`nav relative ${isActive ? 'nav-active' : ''}`}
-            onClick={onClick}> {label}</button >
+            onClick={onClick}> {label}</button>
     );
 }
 

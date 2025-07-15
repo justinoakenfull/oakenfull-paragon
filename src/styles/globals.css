@@ -4,7 +4,7 @@
 
 @layer components {
     .btn {
-        @apply px-4 py-2 rounded-lg transition duration-200 font-medium backdrop-blur-lg bg-glass-bg;
+        @apply px-4 py-2 transition duration-200 backdrop-blur-lg text-maize-subtle bg-davy-gray border border-maize-subtle hover:shadow-glow-maize-subtle-inset;
     }
 
     .btn-primary {
@@ -16,7 +16,11 @@
     }
 
     .content-container {
-        @apply flex flex-col items-center justify-start text-ghost-white m-5;
+        @apply flex flex-col items-stretch text-ghost-white m-5;
+    }
+
+    .content {
+        @apply flex flex-1;
     }
 }
 
@@ -29,5 +33,9 @@
         background-image: url('../assets/textures/bg-dark-scale.png');
         background-repeat: no-repeat;
         background-position: center;
+    }
+
+    .flex {
+        @apply justify-center items-center;
     }
 }

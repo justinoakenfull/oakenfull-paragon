@@ -1,6 +1,6 @@
 export function Projects() {
     return (
-        <div>
+        <div className="flex">
             Projects Component
         </div>
     );
