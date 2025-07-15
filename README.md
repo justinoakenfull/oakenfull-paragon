@@ -45,8 +45,7 @@ src/
 |---------------|-----------------------------------------------------------------------------|
 | **Hero**      | A responsive, dark‑themed game home screen with a semi‑transparent top navigation bar, a full‑width promotional hero banner featuring title, subtitle and View Projects button, a four‑column grid of feature cards for various developer related items, and a footer displaying command prompts and status info.|
 | **About**     | Character‑select layout, showing a grid of hero portraits with a framework/type of development (e.g front-end) selected, and hovering over it brings up an overlay displaying the developers stats based.|
-| **Projects**  | Major Projects: Similar to the About character page, a grid of cards for each project, cinematic reveal, mouse‑responsive tilt, expand to full case study.
-Minor Projects: Holographic cards that tilt on pointer move, animated filters, modal quick view underneath major projects.|
+| **Projects**  | Major Projects: Similar to the About character page, a grid of cards for each project, cinematic reveal, mouse‑responsive tilt, expand to full case study. Minor Projects: Holographic cards that tilt on pointer move, animated filters, modal quick view underneath major projects.|
 | **Contact**   | Command‑center panel, materialising form fields, game‑style success and error feedback.|
 | **Footer**    | Game-style status bar with keyboard shortcut hints                          |
 
