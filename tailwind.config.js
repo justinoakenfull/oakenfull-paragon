@@ -18,6 +18,7 @@ module.exports = {
         'glow-aero': '0 0 8px rgba(65,187,217,0.6), 0 0 16px rgba(65,187,217,0.4)',
         'glow-slate-blue': '0 0 8px rgba(125,83,222,0.6), 0 0 16px rgba(125,83,222,0.4)',
         'glow-maize': '0 0 8px rgba(255,237,101,0.6), 0 0 16px rgba(255,237,101,0.4)',
+        'glow-maize-subtle': '0 0 4px rgba(255,237,101,0.6), 0 0 8px rgba(255,237,101,0.4)',
         'glass-light': '0 2px 10px rgba(255,255,255,0.1)',
       },
       outline: {
@@ -28,6 +29,7 @@ module.exports = {
       backgroundColor: {
         'glass-light': 'rgba(255,255,255,0.1)',
         'glass-dark': 'rgba(0,0,0,0.3)',
+        'dark': '#010308'
       },
       backdropBlur: {
         xs: '2px',

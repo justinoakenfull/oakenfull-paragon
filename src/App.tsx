@@ -35,9 +35,8 @@ function App() {
   };
 
   return (
-    <div className='bg-paragon-grid bg-cover bg-center min-h-screen'
-      style={{ backgroundImage: `url(${bgImage})` }}>
-      <div className="w-full h-full">
+    <div className='bg-paragon-grid h-screen'>
+      <div>
         <NavBar activeItem={activePage} onChange={setActivePage} />
       </div>
       <div className="content-container">
@@ -45,7 +44,7 @@ function App() {
           {renderPage()}
         </div>
       </div>
-    </div>
+    </div >
 
   );
 }

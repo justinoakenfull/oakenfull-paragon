@@ -8,7 +8,7 @@
     }
 
     .nav-active {
-        @apply text-cyan-400;
+        @apply text-aero;
     }
 
     .nav:hover {
@@ -31,5 +31,13 @@
 
     .nav-list {
         @apply flex flex-row backdrop-blur-md bg-glass-light;
+    }
+
+    .navbar {
+        box-shadow: theme('boxShadow.glow-maize-subtle');
+    }
+
+    .navbar {
+        @apply fixed top-0 left-0 w-full z-50
     }
 }

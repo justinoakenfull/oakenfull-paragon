@@ -13,7 +13,7 @@ type NavBarProps = {
 export function NavBar({ activeItem, onChange }: NavBarProps) {
 
     return (
-        <nav className="navbar">
+        <nav className="navbar backdrop-blur-lg">
             <ul className="nav-list relative flex">
                 {navBarItems.map((item) => (
                     <NavButton
