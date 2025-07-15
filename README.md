@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# ⚡ Oakenfull Alternate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> An immersive, game-inspired portfolio site inspired by Paragon's UI aesthetics.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Potential Features
 
-### `npm start`
+- AAA game-style UI inspired by Paragon
+- Fully responsive layout with dynamic parallax and particle effects
+- Glassmorphism with holographic layers
+- Dark sci-fi palette with neon gradient accents
+- Toggleable performance modes (low-end friendly)
+- Global sound effects with mute option
+- Animated day/night theme switching
+- Code-splitting and lazy loading for performance
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **React** (core framework)
+- **Tailwind CSS** (utility-first styling)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+src/
+├── assets/          # Images, audio, shaders
+├── components/      # Reusable UI elements (buttons, cards, nav)
+├── features/        # Major sections like Hero, About, Projects
+├── hooks/           # Custom React hooks
+├── styles/          # Tailwind config and custom overrides
+├── utils/           # Helpers (e.g., animation configs)
+└── App.jsx          # Entry point
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Modules
 
-### `npm run eject`
+| Section       | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| **Hero**      | A responsive, dark‑themed game home screen with a semi‑transparent top navigation bar, a full‑width promotional hero banner featuring title, subtitle and View Projects button, a four‑column grid of feature cards for various developer related items, and a footer displaying command prompts and status info.|
+| **About**     | Character‑select layout, showing a grid of hero portraits with a framework/type of development (e.g front-end) selected, and hovering over it brings up an overlay displaying the developers stats based.|
+| **Projects**  | Major Projects: Similar to the About character page, a grid of cards for each project, cinematic reveal, mouse‑responsive tilt, expand to full case study.
+Minor Projects: Holographic cards that tilt on pointer move, animated filters, modal quick view underneath major projects.|
+| **Contact**   | Command‑center panel, materialising form fields, game‑style success and error feedback.|
+| **Footer**    | Game-style status bar with keyboard shortcut hints                          |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Performance Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 60 FPS on mid-tier hardware
+- Smart resource loading (intersection observers, lazy routes)
+- Reduced motion fallbacks for accessibility
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## Roadmap Highlights
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [ ] Animated theme toggle (light/dark)
+- [ ] Parallax with pointer + gyroscope support
+- [ ] AI-generated holograms as easter eggs
+- [ ] Localized audio reactivity
+- [ ] Save state for toggles/preferences using localStorage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Live Preview
+
+> Coming Soon...
+
+---
+
+## Background & Inspiration
+
+This project was born from a desire to blend immersive game UI with professional portfolio storytelling. Inspired by the UI style of **Paragon** by Epic Games, it reimagines standard web navigation as an interactive, cinematic experience for developers and digital creatives.
