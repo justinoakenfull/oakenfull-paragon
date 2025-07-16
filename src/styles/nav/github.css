@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .github {
+        @apply flex flex-col justify-between items-center p-2 min-h-14 text-pretty;
+    }
+
+    .github-text {
+        @apply text-xs;
+    }
+
+    .github-split {
+        @apply flex items-center gap-2 w-full h-[1px] shadow-glow-slate-blue-inset;
+    }
+
+    .icon {
+        @apply text-ghost-white h-4 w-4;
+    }
+
+    .stat-item {
+        @apply flex items-center gap-1 text-xs text-ghost-white;
+    }
+
+    .stats-row {
+        @apply flex items-center gap-4;
+    }
+
+    .stat-value {
+        @apply font-bold text-maize-subtle;
+    }
+
+    .stat-label {
+        @apply text-maize-subtle;
+    }
+}

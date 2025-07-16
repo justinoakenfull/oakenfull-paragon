@@ -21,14 +21,27 @@
     }
 
     .nav-list {
-        @apply flex flex-row backdrop-blur-md bg-glass-light;
+        @apply flex flex-row h-full;
     }
 
     .navbar {
-        @apply shadow-glow-maize-subtle;
+        @apply flex items-center justify-between top-0 left-0 w-full z-50 backdrop-blur-md bg-glass-light shadow-glow-maize-subtle;
+        @apply min-h-14;
     }
 
     .navbar {
-        @apply top-0 left-0 w-full z-50;
+        @apply flex items-center top-0 left-0 w-full z-50 bg-glass-light backdrop-blur-lg flex justify-between text-ghost-white;
+    }
+
+    .nav-actions {
+        @apply flex h-full items-center justify-end;
+    }
+
+    .vertical-break {
+        @apply w-px my-2 mx-2 self-stretch;
+    }
+
+    .social-link {
+        @apply flex items-center mx-1;
     }
 }
