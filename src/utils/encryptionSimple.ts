@@ -1,6 +1,10 @@
 // Simple and compatible encryption utility
 
-const ENCRYPTION_KEY = process.env.REACT_APP_ENCRYPTION_KEY || 'default-key-change-me';
+const ENCRYPTION_KEY = process.env.REACT_APP_ENCRYPTION_KEY;
+
+if (!ENCRYPTION_KEY) {
+    throw new Error("Encryption key is not set");
+}
 
 export const encryptTokenSimple = (token: string): string => {
     let encrypted = '';
