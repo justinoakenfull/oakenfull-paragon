@@ -21,7 +21,7 @@
     }
 
     .nav-list {
-        @apply flex flex-row backdrop-blur-md bg-glass-light;
+        @apply flex flex-row;
     }
 
     .navbar {
@@ -29,6 +29,6 @@
     }
 
     .navbar {
-        @apply top-0 left-0 w-full z-50;
+        @apply flex items-start top-0 left-0 w-full z-50 backdrop-blur-md bg-glass-light;
     }
 }
