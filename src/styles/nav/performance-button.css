@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .performance-button {
+        @apply text-ghost-white text-xs h-full flex flex-col items-center justify-center relative;
+        @apply min-h-14;
+    }
+
+    .performance-button .performance-text {
+        @apply relative;
+    }
+
+    .performance-button:hover .performance-text::after {
+        content: '';
+        @apply absolute -bottom-2 left-0 w-full h-1 bg-maize shadow-glow-maize transition-all duration-300 ease-in-out;
+    }
+}

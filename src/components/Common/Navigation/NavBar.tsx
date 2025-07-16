@@ -1,6 +1,8 @@
 import React from "react";
 import { NavButton } from "./NavButton";
-import '../../../styles/nav/nav.css'; // Assuming you have a CSS file for styling
+import { PerformanceButton } from "./PerformanceButton";
+import '../../../styles/nav/nav.css';
+import '../../../styles/nav/performance-button.css';
 
 const navBarItems = ["Home", "Projects", "About", "Skills", "Contact"] as const;
 type NavItem = typeof navBarItems[number];
@@ -13,8 +15,10 @@ type NavBarProps = {
 export function NavBar({ activeItem, onChange }: NavBarProps) {
 
     return (
-        <nav className="navbar backdrop-blur-lg">
-            <ul className="nav-list relative flex">
+        // Main navigation bar container
+        <nav className="navbar">
+            {/* Left hand side */}
+            <ul className="nav-list">
                 {navBarItems.map((item) => (
                     <NavButton
                         key={item}
@@ -24,6 +28,14 @@ export function NavBar({ activeItem, onChange }: NavBarProps) {
                     />
                 ))}
             </ul>
+
+            {/* Right hand side */}
+            <div className="nav-actions">
+                <PerformanceButton
+                    className="performance-button"
+                    onClick={() => console.log("Performance button clicked")} // TODO: Implement actual performance logic
+                />
+            </div>
         </nav>
     );
 }
