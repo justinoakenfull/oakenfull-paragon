@@ -17,6 +17,12 @@
 
 ---
 
+## Current state
+
+![Current State](/Screenshot%202025-07-20%20at%2011-24-22.png "Current State")
+
+---
+
 ## Tech Stack
 
 - **React** (core framework)
