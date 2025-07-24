@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React from "react";
 
 import { ReactComponent as RepoIcon } from '../../../../assets/icons/repo.svg';
 import { ReactComponent as CommitIcon } from '../../../../assets/icons/commits.svg';

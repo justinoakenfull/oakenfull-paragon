@@ -6,6 +6,7 @@
     .performance-button {
         @apply text-ghost-white text-xs h-full flex flex-col items-center justify-center relative;
         @apply min-h-14;
+        @apply sm:max-lg:hidden;
     }
 
     .performance-button .performance-text {

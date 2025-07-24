@@ -8,11 +8,11 @@
     }
 
     .github-text {
-        @apply text-xs;
+        @apply text-xs sm:max-lg:hidden;
     }
 
     .github-split {
-        @apply flex items-center gap-2 w-full h-[1px] shadow-glow-slate-blue-inset;
+        @apply flex items-center gap-2 w-full h-[1px] shadow-glow-slate-blue-inset sm:max-lg:hidden;
     }
 
     .icon {
@@ -24,7 +24,7 @@
     }
 
     .stats-row {
-        @apply flex items-center gap-4;
+        @apply flex items-center gap-4 sm:max-lg:flex-col sm:max-lg:gap-2;
     }
 
     .stat-value {
