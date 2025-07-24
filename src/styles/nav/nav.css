@@ -11,13 +11,22 @@
         @apply text-aero;
     }
 
-    .nav:hover {
-        @apply shadow-glow-aero-inset transition-all duration-300 ease-in-out
+    .nav::after {
+        content: '';
+        @apply absolute bottom-0 left-1/2 w-full bg-maize shadow-glow-maize transform -translate-x-1/2 h-0 block transition-all duration-200 ease-in-out;
+    }
+
+    .nav:hover::after {
+        @apply h-1;
+    }
+
+    .nav:hover .nav::after {
+        @apply h-1;
     }
 
     .nav-active::after {
         content: '';
-        @apply absolute bottom-0 left-1/2 w-full h-1 bg-maize shadow-glow-maize transform -translate-x-1/2 transition-all duration-300 ease-in-out;
+        @apply absolute bottom-0 left-1/2 w-full bg-maize shadow-glow-maize transform -translate-x-1/2 transition-all duration-300 ease-in-out h-1;
     }
 
     .nav-list {
@@ -38,10 +47,10 @@
     }
 
     .vertical-break {
-        @apply w-px my-2 mx-2 self-stretch;
+        @apply w-px my-2 mx-2 self-stretch sm:max-xl:hidden;
     }
 
     .social-link {
-        @apply flex items-center mx-1;
+        @apply flex items-center mx-1 sm:max-xl:hidden;
     }
 }
