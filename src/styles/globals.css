@@ -22,6 +22,15 @@
     .content {
         @apply flex flex-1;
     }
+
+    .glow-hover-maize::after {
+        content: '';
+        @apply absolute bottom-0 left-1/2 h-0 w-full bg-maize shadow-glow-maize transform -translate-x-1/2 block transition-all duration-200 ease-in-out;
+    }
+
+    .glow-hover-maize:hover::after {
+        @apply h-1;
+    }
 }
 
 @layer base {
@@ -32,8 +41,8 @@
     body {
         background-image: url('../assets/textures/bg-dark-scale.png');
         background-position: center;
+        background-repeat: repeat;
         min-height: 100vh;
-        width: 100%;
     }
 
     .flex {

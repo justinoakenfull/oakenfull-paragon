@@ -32,7 +32,7 @@ export function NavBar({ activeItem, onChange }: NavBarProps) {
                 <button className="md:hidden me-4" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                     {isMobileMenuOpen ? <CloseIcon className="w-6 h-6 fill-ghost-white" /> : <MenuIcon className="w-6 h-6 fill-ghost-white" />}
                 </button>
-                <ul className={`nav-list flex-col md:flex-row md:flex ${isMobileMenuOpen ? "flex" : "hidden"}`}>
+                <ul className={`nav-list flex-col md:flex-row md:flex ${isMobileMenuOpen ? "flex items-start" : "hidden"}`}>
                     {navBarItems.map((item) => (
                         <NavButton
                             key={item}
@@ -50,7 +50,7 @@ export function NavBar({ activeItem, onChange }: NavBarProps) {
             {/* Right hand side */}
             <div className="nav-actions">
                 <PerformanceButton
-                    className="performance-button"
+                    className="performance-button glow-hover-maize"
                     onClick={() => console.log("Performance button clicked")} // TODO: Implement actual performance logic
                 />
                 <GitHub username="justinoakenfull" />
