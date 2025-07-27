@@ -1,40 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+
+//  Get our colors and shadows from the theme
+const colors = require('./src/styles/tailwind-colours.js');
+const colorsList = Object.keys(colors.colors);
+
+
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html",
   ],
+  safelist: [
+    // Ensure all colors are available in Tailwind
+    ...colorsList.map(color => `bg-${color}`),
+    ...colorsList.map(color => `text-${color}`),
+    ...colorsList.map(color => `border-${color}`),
+  ],
   theme: {
     extend: {
-      colors: {
-        'davy-gray': {
-          DEFAULT: '#50514F',
-          subtle: '#3F3F3E',  // ~10% darker
-          highlight: '#666765',  // ~10% lighter
-        },
-        maize: {
-          DEFAULT: '#FFED65',
-          subtle: '#E6D23E',
-          highlight: '#FFF289',
-        },
-        aero: {
-          DEFAULT: '#41BBD9',
-          subtle: '#359FB7',
-          highlight: '#6CD5EA',
-        },
-        'slate-blue': {
-          DEFAULT: '#7D53DE',
-          subtle: '#693BC2',
-          highlight: '#9678E4',
-        },
-        'ghost-white': {
-          DEFAULT: '#FAFAFF',
-          subtle: '#E6E6F2',
-          highlight: '#FFFFFF',
-        },
-        'glass-light': 'rgba(255,255,255,0.1)',
-        'glass-dark': 'rgba(0,0,0,0.3)',
-      },
+      colors: colors.colors,
       boxShadow: {
         // default neon glows
         'glow-maize': '0 0 8px #FFED65aa, 0 0 16px #FFED6555',

@@ -1,0 +1,107 @@
+const colors = {
+    'davy-gray': {
+        DEFAULT: '#50514F',
+        subtle: '#3F3F3E',  // ~10% darker
+        highlight: '#666765',  // ~10% lighter
+    },
+    maize: {
+        DEFAULT: '#FFED65',
+        subtle: '#E6D23E',
+        highlight: '#FFF289',
+    },
+    aero: {
+        DEFAULT: '#41BBD9',
+        subtle: '#359FB7',
+        highlight: '#6CD5EA',
+    },
+    'slate-blue': {
+        DEFAULT: '#7D53DE',
+        subtle: '#693BC2',
+        highlight: '#9678E4',
+    },
+    green: {
+        DEFAULT: '#00FF00',
+        subtle: '#00CC00',
+        highlight: '#33FF33',
+    },
+    'ghost-white': {
+        DEFAULT: '#FAFAFF',
+        subtle: '#E6E6F2',
+        highlight: '#FFFFFF',
+    },
+    'glass-light': 'rgba(255,255,255,0.1)',
+    'glass-dark': 'rgba(0,0,0,0.3)'
+}
+
+const blur = {
+
+    xs: '2px',
+    sm: '5px',
+    md: '10px',
+}
+
+const backgroundColor = {
+    // glass layers and dark fallback
+    'glass-light': 'rgba(255,255,255,0.1)',
+    'glass-dark': 'rgba(0,0,0,0.3)',
+    'dark': '#010308',
+
+}
+
+const outline = {
+    // default outline styles
+    'davy-gray': ['2px solid #50514F', '2px'],
+    'maize': ['2px solid #FFED65', '2px'],
+    'aero': ['2px solid #41BBD9', '2px'],
+    'slate-blue': ['2px solid #7D53DE', '2px'],
+    'ghost-white': ['2px solid #FAFAFF', '2px'],
+}
+
+const boxShadow = {
+    // default neon glows
+    'glow-maize': '0 0 8px #FFED65aa, 0 0 16px #FFED6555',
+    'glow-aero': '0 0 8px #41BBD9aa, 0 0 16px #41BBD955',
+    'glow-slate-blue': '0 0 8px #7D53DEaa, 0 0 16px #7D53DE55',
+    // subtle glows (smaller blur + darker shade)
+    'glow-maize-subtle': '0 0 4px #E6D23Eaa, 0 0 8px #E6D23E55',
+    'glow-aero-subtle': '0 0 4px #359FB7aa, 0 0 8px #359FB755',
+    'glow-slate-blue-subtle': '0 0 4px #693BC2aa, 0 0 8px #693BC255',
+    // highlight glows (larger blur + lighter shade)
+    'glow-maize-highlight': '0 0 12px #FFF289aa, 0 0 24px #FFF28955',
+    'glow-aero-highlight': '0 0 12px #6CD5EAaa, 0 0 24px #6CD5EA55',
+    'glow-slate-blue-highlight': '0 0 12px #9678E4aa, 0 0 24px #9678E455',
+    // glass shadows
+    'glow-glass-light': '0 0 8px rgba(255,255,255,0.1) 0 0 16px rgba(255,255,255,0.1)',
+    'glow-glass-dark': '0 0 8px rgba(0,0,0,0.3) 0 0 16px rgba(0,0,0,0.3)',
+}
+
+for (const key in colors) {
+    if (!outline.hasOwnProperty(key)) {
+        outline[key] = [`2px solid ${colors[key]}`, '2px'];
+    }
+    if (!outline.hasOwnProperty(`${key}-subtle`)) {
+        outline[`${key}-subtle`] = [`2px solid ${colors[key].subtle}`, '2px'];
+    }
+    if (!outline.hasOwnProperty(`${key}-highlight`)) {
+        outline[`${key}-highlight`] = [`2px solid ${colors[key].highlight}`, '2px'];
+    }
+    if (!boxShadow.hasOwnProperty(`glow-${key}`)) {
+        boxShadow[`glow-${key}`] = `0 0 8px ${colors[key]}aa, 0 0 16px ${colors[key]}55`;
+    }
+    if (!boxShadow.hasOwnProperty(`glow-${key}-subtle`)) {
+        boxShadow[`glow-${key}-subtle`] = `0 0 4px ${colors[key].subtle}aa, 0 0 8px ${colors[key].subtle}55`;
+    }
+    if (!boxShadow.hasOwnProperty(`glow-${key}-highlight`)) {
+        boxShadow[`glow-${key}-highlight`] = `0 0 12px ${colors[key].highlight}aa, 0 0 24px ${colors[key].highlight}55`;
+    }
+
+}
+
+
+module.exports = {
+    colors,
+    blur,
+    backgroundColor,
+    outline,
+    boxShadow
+}

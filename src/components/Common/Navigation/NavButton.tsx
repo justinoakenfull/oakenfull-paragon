@@ -8,7 +8,7 @@ type NavButtonProps = {
 
 function NavButton({ label, isActive, onClick }: NavButtonProps) {
     return (
-        <button className={`nav relative ${isActive ? 'nav-active' : ''}`}
+        <button className={`nav relative glow-hover-maize ${isActive ? 'nav-active' : ''}`}
             onClick={onClick}> {label}</button>
     );
 }
